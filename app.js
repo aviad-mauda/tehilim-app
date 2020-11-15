@@ -13,7 +13,7 @@ const app = angular.module("myApp",[
     };
 })
 .run(function($rootScope) {
-    $rootScope.serverDomain = "//localhost:3000";
+    $rootScope.serverDomain = "https://tehilim.herokuapp.com";
 
     $rootScope.user = new Object();
 
