@@ -1,0 +1,44 @@
+<div ng-controller="submitController">
+    <form>
+
+        <label class="user-prop">
+            שם פרטי:
+            <input type="text" ng-model="user.name" name="name"/>
+        </label>
+        
+        <label class="user-prop">
+            שם הורה:
+            <input type="text" ng-model="user.parent" name="parent" />
+          </label>
+
+          
+          <label class="user-prop">
+              סוג תפילה
+              <select ng-model="user.type">
+                <option ng-repeat="type in types" value="{{type}}">{{type}}</option>
+              </select>
+            </label>
+        
+          <label class="user-prop">
+            מין:
+            <select ng-model="user.gender">
+                <option ng-repeat="gender in genders" value="{{gender}}">{{gender}}</option>
+            </select>
+          </label>
+        
+          <label class="user-prop">
+            פרק (לא חובה)
+            <select ng-model="user.chapter">
+                <option ng-repeat="chapter in chapters" value="{{chapter}}">{{chapter}}</option>
+            </select>
+          </label>
+        <button ng-click="submit(user)">שלח</button>
+    </form>
+
+    <div ng-show="showResult">
+        נא לקרוא פרק {{user.chapter}}
+        ל{{user.type}}
+        עבורך ועבור {{user.friend.name}} {{user.friend.gender == "f"?"בת":"בן"}} {{user.friend.parent}}
+    {{user.gender == "f" ? "תזכי" : "תזכה"}} למצוות!
+    </div>
+</div>
