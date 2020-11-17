@@ -32,13 +32,13 @@
                 <option ng-repeat="chapter in chapters" value="{{chapter}}">{{chapter}}</option>
             </select>
           </label>
-        <button ng-click="submit(user)">שלח</button>
+        <button ng-click="submit()">שלח</button>
     </form>
 
     <div ng-show="showResult">
-        נא לקרוא פרק {{user.chapter}}
-        ל{{user.type}}
-        עבורך ועבור {{user.friend.name}} {{user.friend.gender == "f"?"בת":"בן"}} {{user.friend.parent}}
-    {{user.gender == "f" ? "תזכי" : "תזכה"}} למצוות!
+        נא לקרוא פרק {{userRes.chapter}}
+        ל{{userRes.type}}
+        עבורך ועבור {{userRes.friend.name}} {{userRes.friend.gender == "f"?"בת":"בן"}} {{userRes.friend.parent}}
+    {{userRes.gender == "f" ? "תזכי" : "תזכה"}} למצוות!
     </div>
 </div>

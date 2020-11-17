@@ -1,16 +1,17 @@
 angular.module('submitModule', [])
 .controller("submitController", function($scope, $rootScope, $http) {
-    $scope.submit = (user) => { 
-        user.gender = $rootScope.gendersRes.get(user.gender);
-        user.type = $rootScope.typesRes.get(user.type);
-        $http.post($rootScope.serverDomain+"/addUser", user).then((res)=>{
+    $scope.submit = () => { 
+        $scope.user.gender = $rootScope.gendersRes.get($scope.user.gender);
+        $scope.user.type = $rootScope.typesRes.get($scope.user.type);
+        $http.post(serverDomain+"/addUser", $scope.user).then((res)=>{
             $scope.showResult = true;
-            $scope.user = res.data.user;
-            $scope.user.type = getByValue(res.data.user.type)
+            $scope.userRes = res.data.user;
+            $scope.userRes.type = getByValue(res.data.user.type);
+            delete $scope.user.name;
+            delete $scope.user.parent;
         }, (err)=>{
             console.log(err);
         });
-
     }
 
     const  getByValue = (searchValue) =>  {

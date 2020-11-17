@@ -13,10 +13,7 @@ const app = angular.module("myApp",[
     };
 })
 .run(function($rootScope) {
-    $rootScope.serverDomain = "//localhost:3000";
-
     $rootScope.user = new Object();
-
     $rootScope.genders = [
         "בן",
         "בת"
