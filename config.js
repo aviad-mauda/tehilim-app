@@ -1,1 +1,1 @@
-const serverDomain="//tehilim.herokuapp.com/"
+const serverDomain="//tehilim.herokuapp.com"
