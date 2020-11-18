@@ -32,6 +32,11 @@
                 <option ng-repeat="chapter in chapters" value="{{chapter}}">{{chapter}}</option>
             </select>
           </label>
+
+          <label class="user-prop" >
+            <textarea id="story" maxlength="200" ng-model="user.story" placeholder="ספר על עצמך (לא חובה. מקסימום 200 תווים)"></textarea>
+          </label>
+
         <button ng-click="submit()">שלח</button>
     </form>
 
