@@ -12,7 +12,14 @@ const app = angular.module("myApp",[
         templateUrl: './submit/submit.html'
     };
 })
-.run(function($rootScope) {
+.run(function($rootScope, $http) {
+
+    $http.get(serverDomain+"/booksCount").then((res)=>{
+        $rootScope.booksCounter = res.data.booksCounter;
+    }, (err)=>{
+        console.log(err);
+    });
+
     $rootScope.user = new Object();
     $rootScope.genders = [
         "בן",
