@@ -30,7 +30,7 @@
           <label class="user-prop">
             פרק (לא חובה)
             <select ng-model="user.chapter">
-                <option ng-repeat="chapter in chapters" value="{{chapter}}">{{chapter}}</option>
+                <option ng-repeat="chapter in chapters track by $index" value="{{chapter}}" >{{chapter}}</option>
             </select>
           </label>
 
