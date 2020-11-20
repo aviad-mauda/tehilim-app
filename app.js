@@ -19,12 +19,17 @@ const app = angular.module("myApp",[
     }, (err)=>{
         console.log(err);
     });
+    
+    $rootScope.getAvailableChapters = () => {
+        $http.get(serverDomain+"/getAvailableChapters").then((res)=>{
+            $rootScope.chapters = res.data.chapters;
+        }, (err)=>{
+            console.log(err);
+        });
+    }
 
-    $http.get(serverDomain+"/getAvailableChapters").then((res)=>{
-        $rootScope.chapters = res.data.chapters;
-    }, (err)=>{
-        console.log(err);
-    });
+    $rootScope.getAvailableChapters();
+
 
 
     $rootScope.user = new Object();
